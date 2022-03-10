@@ -1,20 +1,20 @@
 pipeline{
     agent any
     stages{
-        stage("checkout"){
+        stage("clone"){
             steps{
-                git "https://github.com/sbtalk71/TestWebApp.git"
+                bat " git clone https://github.com/sbtalk71/TestWebApp.git"
             }
         }
         stage("compile"){
             steps{
-            sh "mvn clean compile"
+            bat "mvn clean compile"
             }
         }
         
          stage("package"){
             steps{
-            sh "mvn package"
+            bat "mvn package"
             }
         }
        
